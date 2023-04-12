@@ -33,6 +33,11 @@ let transpileJSForDev = () => {
         .pipe(dest(`temp/js`));
 };
 
+let copyCSSForDev = () => {
+    return src(`styles/main.css`)
+        .pipe(dest(`temp/styles`));
+};
+
 let compressCSSForProd = () => {
     return src(`styles/main.css`)
         .pipe(cleanCSS({compatibility: `ie8`}))
@@ -54,8 +59,7 @@ let transpileJSForProd = () => {
 
 let copyUnprocessedAssetsForDev = () => {
     return src([
-        `styles*/*.css`,    // Source all .css,
-        `index.html`        // and index.html
+        `index.html`        // Source index.html
     ], {dot: true})
         .pipe(dest(`temp`));
 };
@@ -75,7 +79,7 @@ let serve = () => {
     watch(`scripts/*.js`, series(lintJS, transpileJSForDev))
         .on(`change`, reload);
 
-    watch(`styles/*.css`, lintCSS)
+    watch(`styles/*.css`, series(lintCSS, copyCSSForDev))
         .on(`change`, reload);
 };
 
@@ -118,6 +122,7 @@ exports.serve = series(
     lintCSS,
     lintJS,
     transpileJSForDev,
+    copyCSSForDev,
     copyUnprocessedAssetsForDev,
     serve
 );
