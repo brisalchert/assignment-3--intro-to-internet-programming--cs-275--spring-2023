@@ -1,0 +1,28 @@
+body {
+  line-height: 1.4;
+  margin: 0;
+}
+
+header {
+  background-color: skyblue;
+  height: 100px;
+  display: flex;
+  justify-content: right;
+  padding: 10px;
+}
+
+main {
+  margin: 16px;
+}
+
+h1 {
+  line-height: 38px;
+}
+
+#js-triggers {
+  list-style-type: none;
+}
+
+nav {
+  display: none;
+}
