@@ -12,11 +12,6 @@ header {
   padding: 10px;
 }
 
-ul {
-  position: absolute;
-  bottom: 0;
-}
-
 main {
   margin: 16px;
 }
@@ -27,6 +22,8 @@ h1 {
 
 #js-triggers {
   list-style-type: none;
+  position: absolute;
+  bottom: 0;
 }
 
 nav {
