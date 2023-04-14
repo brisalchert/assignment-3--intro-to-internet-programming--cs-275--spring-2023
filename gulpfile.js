@@ -115,6 +115,7 @@ exports.default = series(
     lintCSS,
     lintJS,
     transpileJSForDev,
+    copyCSSForDev,
     copyUnprocessedAssetsForDev,
     serve
 );
