@@ -8,7 +8,13 @@ header {
   height: 100px;
   display: flex;
   justify-content: right;
+  position: relative;
   padding: 10px;
+}
+
+ul {
+  position: absolute;
+  bottom: 0;
 }
 
 main {
