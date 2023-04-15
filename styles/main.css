@@ -1,5 +1,6 @@
 :root {
   --header-height: 100px;
+  --nav-height: 58px;
 }
 
 body {
@@ -13,6 +14,10 @@ header {
   display: flex;
   justify-content: right;
   position: relative;
+  z-index: 1;
+}
+
+header > ul {
   padding: 10px;
 }
 
@@ -37,11 +42,38 @@ h1 {
 
 nav {
   position: absolute;
-  top: var(--header-height);
+  top: calc(var(--header-height) - var(--nav-height));
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  z-index: 0;
+  line-height: var(--nav-height);
+}
+
+nav > ul {
+  display: flex;
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  background-color: gray;
+}
+
+nav > ul > li {
+  border: 4px solid silver;
+}
+
+nav > ul > li > ul {
+  list-style-type: none;
+  margin-left: -40px;
+  display: none;
 }
 
 nav > ul > li > a,
 nav > ul > li > ul > li > a {
   text-decoration: none;
   color: black;
+  display: block;
+  width: 150px;
+  line-height: 48px;
 }
