@@ -1,6 +1,8 @@
 :root {
   --header-height: 100px;
+  --header-z-index: 1;
   --nav-height: 58px;
+  --modal-margin: 80px;
 }
 
 body {
@@ -15,7 +17,7 @@ header {
   display: flex;
   justify-content: right;
   position: relative;
-  z-index: 1;
+  z-index: var(--header-z-index);
 }
 
 header > ul {
@@ -79,4 +81,26 @@ nav > ul > li > ul > li > a {
   display: block;
   width: 150px;
   line-height: 48px;
+}
+
+.modal-panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, .8);
+  z-index: calc(var(--header-z-index) + 1);
+  visibility: hidden;
+}
+
+.modal-content-pane {
+  z-index: calc(var(--header-z-index) + 2);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: var(--modal-margin);
+  background-color: white;
 }
