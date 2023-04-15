@@ -16,6 +16,11 @@ header {
   padding: 10px;
 }
 
+header > ul > li > a {
+  text-decoration: none;
+  color: white;
+}
+
 main {
   margin: 16px;
 }
@@ -33,9 +38,4 @@ h1 {
 nav {
   position: absolute;
   top: var(--header-height);
-}
-
-a {
-  text-decoration: none;
-  color: white;
 }
