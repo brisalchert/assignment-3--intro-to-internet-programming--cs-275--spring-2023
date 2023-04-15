@@ -39,3 +39,9 @@ nav {
   position: absolute;
   top: var(--header-height);
 }
+
+nav > ul > li > a,
+nav > ul > li > ul > li > a {
+  text-decoration: none;
+  color: black;
+}
