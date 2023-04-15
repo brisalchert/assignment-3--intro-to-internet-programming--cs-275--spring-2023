@@ -1,3 +1,7 @@
+:root {
+  --header-height: 100px;
+}
+
 body {
   line-height: 1.4;
   margin: 0;
@@ -5,7 +9,7 @@ body {
 
 header {
   background-color: skyblue;
-  height: 100px;
+  height: var(--header-height);
   display: flex;
   justify-content: right;
   position: relative;
@@ -27,7 +31,8 @@ h1 {
 }
 
 nav {
-  display: none;
+  position: absolute;
+  top: var(--header-height);
 }
 
 a {
